@@ -31,7 +31,7 @@ def save_user_id(user_id: int):
         file.write(f"{user_id}\n")
 
 def main():
-    token = 'YOUR_TOKEN_HERE'
+    token = '***REMOVED***'
     application = Application.builder().token(token).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
