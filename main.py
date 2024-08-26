@@ -15,7 +15,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 # Основная функция для запуска бота
 def main():
     # Вставьте сюда ваш токен, который вы получили от BotFather
-    token = 'YOUR_TOKEN_HERE'
+    token = '***REMOVED***'
 
     # Создаем экземпляр класса Application и передаем ему токен
     application = Application.builder().token(token).build()
