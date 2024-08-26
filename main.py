@@ -21,10 +21,6 @@ def save_user_info(user_id: int, username: str, first_name: str, last_name: str)
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     original_text = update.message.text
     transformed_text = transform_text(original_text)
-    if '\n' in transformed_text:
-        transformed_text = '```\n' + transformed_text + '```\n'
-    else:
-        transformed_text = '`' + transformed_text + '`'
     await update.message.reply_text(transformed_text)
 
 
