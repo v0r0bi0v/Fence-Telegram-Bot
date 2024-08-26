@@ -4,12 +4,30 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 
 # Функция, которая будет обрабатывать команды /start и /help
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text('Привет! Я бот, который повторяет все, что ты скажешь.')
+    await update.message.reply_text('Привет! Я переписываю твои сообщения ЗаБоРоМ.')
 
 
-# Функция, которая будет повторять сообщения
+# Функция, которая будет преобразовывать текст сообщения
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text(update.message.text)
+    original_text = update.message.text
+    transformed_text = transform_text(original_text)
+    await update.message.reply_text(transformed_text)
+
+
+def transform_text(text: str) -> str:
+    result = []
+    toggle = False  # Параметр для чередования регистра
+    for char in text:
+        if char.isalpha():
+            if toggle:
+                result.append(char.upper())
+            else:
+                result.append(char.lower())
+            toggle = not toggle
+        else:
+            result.append(char)  # Не изменяем не буквенные символы
+
+    return ''.join(result)
 
 
 # Основная функция для запуска бота
