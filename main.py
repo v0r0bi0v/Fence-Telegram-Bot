@@ -14,7 +14,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 def save_user_info(user_id: int, username: str, first_name: str, last_name: str):
-    with open("user_info.txt", "a", encoding='utf-8') as file:
+    with open("users_info.txt", "a", encoding='utf-8') as file:
         file.write(f"ID: {user_id}, Username: {username}, First Name: {first_name}, Last Name: {last_name}\n")
 
 

@@ -1,2 +1,5 @@
 config.py
-
+messages.txt
+users_info.txt
+bot.log
+__pycache__/*
