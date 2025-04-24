@@ -9,13 +9,13 @@ start_bot() {
         echo "Fence-бот уже запущен."
     else
         nohup python3 main.py --bot fence > fence_bot.log 2>&1 &
-        echo "Gym-бот запущен."
-    fi}
+        echo "Fence-бот запущен."
+    fi
+}
 
-
-# Останавливаем все процессы Gym-бота
+# Останавливаем все процессы Fence-бота
 stop_all() {
-    pkill -f "python3 main.py --bot gym"
+    pkill -f "python3 main.py --bot fence"
     echo "Все процессы Fence-бота остановлены."
 }
 
